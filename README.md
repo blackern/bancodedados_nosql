@@ -77,3 +77,33 @@
 
 - **Unificação:** Armazena os dados relacionados juntos no mesmo registro.
 - **Mecanismo:** Utiliza documentos incorporados conhecidos como embedded documents.
+
+# 6. Operações CRUD
+
+## As operações fundamentais de banco de dados dividem-se em quatro ações principais, conhecidas pela sigla CRUD: 
+
+- **Create:** 
+  * insertOne(data, options)
+  * insertMany(data, options)
+- **Read:** 
+  * find(filter, options)
+  * findOne(filter, options)
+- **Update:** 
+  * updateOne(filter, data, options)
+  * updateMany(filter, data, options)
+  * replaceOne(filter, data, options)
+- **Delete:** 
+  * deleteOne(filter, options)
+  * deleteMany(filter, options)
+
+# 7. Comandos Shell
+
+- **show databases:** Exibe os bancos de dados disponíveis. 
+- **use database:** Usado para trocar para o banco de dados informado.
+- **db.createCollection("nome_collection"):** Cria uma nova collection.
+- **show collections:** Mostra todas as collections.
+- **db.nome_collection.find():** Retorna todos os documentos da collection.
+- **db.nome_collection.insertOne({objeto}):** Insere um documento na collection.
+- **db.nome_collection.insertMany([{objetos}]):** Insere vários documentos em uma collection.
+- **db.cliente.find({"nome": "Luis"}):** Busca documentos que possuem o campo nome com o valor **"Luis"**.
+- **db.cliente.find({_id: ObjectId("64a7b8c9d0e1f2a3b4c5d6e7")}):** Busca um documento pelo seu identificador único (_id).
