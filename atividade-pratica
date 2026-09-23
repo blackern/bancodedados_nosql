@@ -1,0 +1,131 @@
+use store
+
+db.createCollection("Customers")
+
+db.Customers.insertMany([
+
+ {
+
+  "name": "Ana",
+
+  "age": 25,
+
+  "city": "Salvador",
+
+  "active": true,
+
+  "points": 120
+
+ },
+
+ {
+
+  "name": "Bruno",
+
+  "age": 32,
+
+  "city": "Feira de Santana",
+
+  "active": true,
+
+  "points": 300
+
+ },
+
+ {
+
+  "name": "Carlos",
+
+  "age": 28,
+
+  "city": "Salvador",
+
+  "active": false,
+
+  "points": 80
+
+ },
+
+ {
+
+  "name": "Daniela",
+
+  "age": 40,
+
+  "city": "São Paulo",
+
+  "active": true,
+
+  "points": 500
+
+ },
+
+ {
+
+  "name": "Eduarda",
+
+  "age": 22,
+
+  "city": "Rio de Janeiro",
+
+  "active": false,
+
+  "points": 50
+
+ }
+
+])
+
+
+exercício 1: db.Customers.find({"city" : "Salvador"})
+
+exercício 2: db.Customers.updateOne({"name" : "Carlos"}, {$set: {"active" : "true"}})
+
+exercício 3: db.Customers.updateMany({"city" : "Salvador"}, {$set: {"state" : "BA"}})
+
+exercício 4: db.Customers.updateOne({"name" : "Ana"}, {$set: {"points" : 170}})
+
+exercício 5: db.Customers.insertOne({
+
+ "name": "Fernando",
+
+ "age": 29,
+
+ "city": "Recife",
+
+ "active": true,
+
+ "points": 90
+
+})
+
+exercício 6: db.Customers.deleteOne({"name" : "Eduarda"})
+
+exercício 7: db.Customers.updateOne({"name" : "Daniela"}, {$set: {"vip" : "true"}})
+
+exercício 8: db.Customers.updateOne({"name" : "Bruno"}, {$unset: {"points" : ""}})
+
+exercício 9: db.Customers.find().sort({"age" : -1})
+
+exercício 10: db.Customers.find({$and: [{"age" : {$gt: 30}}, {"active" : true}]})
+
+
+desafio 1: db.Customers.find({}, {"name" : 1, "_id" : 0})
+
+desafio 2: db.Customers.countDocuments({})
+
+desafio 3: db.Customers.countDocuments({"active" : true})
+
+desafio 4: db.Customers.find().sort({"points" : -1}).limit(1)
+
+desafio 5: db.Customers.find().sort({"age" : 1}).limit(1)
+
+desafio 6: db.Customers.find({"points" : {$gte : 100, $lte : 400}})
+
+desafio 7: db.Customers.find({"city" : {$in : ["Salvador", "São Paulo"]}})
+
+desafio 8: db.Customers.find().sort({"name" : 1 })
+
+desafio 9: db.Customers.find().limit(3)
+
+desafio 10: db.Customers.find({"active" : false})
